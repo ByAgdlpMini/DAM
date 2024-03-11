@@ -1,0 +1,23 @@
+<catalogo>
+  <libro idioma="Español" editorial="Editorial XYZ">
+    <titulo>El amor en los tiempos del cólera</titulo>
+    <autor>Gabriel García Márquez</autor>
+    <genero>Novela</genero>
+    <anio_publicacion>1985</anio_publicacion>
+    <ISBN>ISBN-978-0307475312</ISBN>
+  </libro>
+  <libro idioma="Inglés" editorial="Vintage Books">
+    <titulo>To Kill a Mockingbird</titulo>
+    <autor>Harper Lee</autor>
+    <genero>Ficción</genero>
+    <anio_publicacion>1960</anio_publicacion>
+    <ISBN>ISBN-978-0061120084</ISBN>
+  </libro>
+  <libro>
+    <titulo>El principito</titulo>
+    <autor>Antoine de Saint-Exupéry</autor>
+    <genero>Ficción</genero>
+    <anio_publicacion>1943</anio_publicacion>
+    <ISBN>ISBN-978-0156012195</ISBN>
+  </libro>
+</catalogo>
