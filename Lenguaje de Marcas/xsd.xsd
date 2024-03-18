@@ -1,23 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
-<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="catalogo">
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="tienda_electronica">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" name="libro">
+        <xs:element name="producto" maxOccurs="unbounded">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="titulo" type="xs:string" />
-              <xs:element name="autor" type="xs:string" />
-              <xs:element name="genero" type="xs:string" />
-              <xs:element name="anio_publicacion" type="xs:unsignedShort" />
-              <xs:element name="ISBN" type="xs:string" />
+              <xs:element name="nombre" type="xs:string"/>
+              <xs:element name="marca" type="xs:string"/>
+              <xs:element name="modelo" type="xs:string"/>
+              <xs:element name="año_fabricacion" type="xs:gYear"/>
+              <xs:element name="numero_serie" type="xs:string"/>
+              <xs:element name="color" type="xs:string" minOccurs="0"/>
+              <xs:element name="tipo_pantalla" type="xs:string" minOccurs="0"/>
+              <xs:element name="capacidad_almacenamiento" type="xs:string" minOccurs="0"/>
             </xs:sequence>
-            <xs:attribute name="idioma" type="xs:string" use="optional" />
-            <xs:attribute name="editorial" type="xs:string" use="optional" />
           </xs:complexType>
         </xs:element>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
 </xs:schema>

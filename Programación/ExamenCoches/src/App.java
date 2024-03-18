@@ -16,10 +16,10 @@ public class App {
         while (op != 5) {
             System.out.println();
             System.out.println();
-            System.out.println("1. Ver coches");
-            System.out.println("2. Añadir coche");
-            System.out.println("3. Eliminar coche");
-            System.out.println("4. Cambiar Estado");
+            System.out.println("1. Insertar un Nuevo VideoJuego");
+            System.out.println("2. Quitar un Videojuego de la Lista");
+            System.out.println("3. Modificar precio de un videojuego");
+            System.out.println("4. Mostrar la lista de Videojuegos disponibles en la Tienda");
             System.out.println("5: Salir");
 
             op = sc.nextInt();
