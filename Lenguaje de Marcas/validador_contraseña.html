@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url("fondo.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            position: absolute;
+            top: 0px;
+            left: 50px;
+            width: 250px;
+            height: auto;
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            width: 320px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #e50914;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #cc0812;
+        }
+
+        p.error {
+            color: #e50914;
+            font-size: 14px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        p.valid {
+            color: #008000;
+            font-size: 14px;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="netflix.png" alt="netflix" class="logo">
+    <div class="content">
+        <div class="container">
+            <h1>Iniciar sesión</h1>
+            <form id="loginForm" onsubmit="validatePassword(); return false;">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+                <p id="error-msg" class="error"></p>
+                <p id="valid-msg" class="valid"></p>
+                <button type="submit">Iniciar sesión</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validatePassword() {
+            var contrasena = document.getElementById("password").value;
+            var errorMensaje = document.getElementById("error-msg");
+            var validMensaje = document.getElementById("valid-msg");
+
+
+            var largo = /.{8,}/;
+            var mayuscula = /[A-Z]/;
+            var minuscula = /[a-z]/;
+            var especial = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+            var requisitosFaltantes = [];
+
+
+            if (!largo.test(contrasena)) {
+                requisitosFaltantes.push("al menos 8 caracteres");
+            }
+            if (!mayuscula.test(contrasena)) {
+                requisitosFaltantes.push("al menos una mayúscula");
+            }
+            if (!minuscula.test(contrasena)) {
+                requisitosFaltantes.push("al menos una minúscula");
+            }
+            if (!especial.test(contrasena)) {
+                requisitosFaltantes.push("al menos un carácter especial");
+            }
+
+            if (requisitosFaltantes.length === 0) {
+                errorMensaje.innerText = "";
+                validMensaje.innerText = "La contraseña es válida.";
+                validMensaje.style.display = "block";
+                errorMensaje.style.display = "none";
+            } else {
+                validMensaje.innerText = "";
+                errorMensaje.innerText = "La contraseña debe contener: " + requisitosFaltantes.join(", ");
+                errorMensaje.style.display = "block";
+                validMensaje.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
